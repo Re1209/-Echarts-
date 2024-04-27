@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+<title>基于swiper实现旋转木马轮播图</title>
+<link href="https://3.swiper.com.cn/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
+<style>
+/*其他css样式*/
+.bigFocus{position:relative;}
+.bigFocus .swiper-container{padding:100px 0;width:1450px;height:500px;}
+.bigFocus .swiper-slide{display:flex;justify-content:center;align-items:center;transition:300ms;transform:scale(0.8);opacity:.5;}
+.bigFocus .swiper-slide img{width: 1000px;height:500px;}
+.bigFocus .swiper-slide-active{transform:scale(1);z-index:999;opacity:1;}
+.bigFocus .swiper-slide-active img{box-shadow:0 0 10px #03206c;border-radius:5px;}
+
+/*其他css样式*/
+</style>
+</head>
+<body>
+<div class="millia">
+<!--其他HTML结构-->
+<div class="bigFocus">
+<div class="swiper-container">
+<div class="swiper-wrapper">
+<div class="swiper-slide"><a href="../recruit/screen/index.html"><img src="../recruit/images/0.png" alt=""></a></div>
+<div class="swiper-slide"><a href="../recruit/details/detail1/index.html"><img src="../recruit/images/1.png" alt=""></a></div>
+<div class="swiper-slide"><a href="../recruit/details/detail2/index.html"><img src="../recruit/images/2.png" alt=""></a></div>
+<div class="swiper-slide"><a href="../recruit/details/detail3/index.html"><img src="../recruit/images/3.png" alt=""></a></div>
+<div class="swiper-slide"><a href="../recruit/details/detail4/index.html"><img src="../recruit/images/4.png" alt=""></a></div>
+<div class="swiper-slide"><a href="../recruit/details/detail5/index.html"><img src="../recruit/images/5.png" alt=""></a></div>
+<div class="swiper-slide"><a href="../recruit/details/detail6/index.html"><img src="../recruit/images/6.png" alt=""></a></div>
+</div>
+</div>
+<div class="swiper-button-next swiper-button-white"></div>
+<div class="swiper-button-prev swiper-button-white"></div>
+</div>
+<!--其他HTML结构-->
+</div>
+<script src="https://3.swiper.com.cn/dist/js/swiper.min.js"></script>
+<script>
+/*其他js*/
+  var swiper = new Swiper('.bigFocus .swiper-container', {
+	autoplay:3000,
+  	speed:1000,
+  	autoplayDisableOnInteraction : false,
+  	loop:true,
+ 	centeredSlides : true,
+ 	slidesPerView:2,
+  	spaceBetween: -260,
+  	paginationClickable:true,
+  	//pagination: ".bigFocus .swiper-pagination",
+  	nextButton: '.bigFocus .swiper-button-next',
+  	prevButton: '.bigFocus .swiper-button-prev',
+  	breakpoints: {
+      640: {
+      	slidesPerView: 1,
+      }
+  	}
+  });
+/*其他js*/
+</script>
+</body>
+</html>
